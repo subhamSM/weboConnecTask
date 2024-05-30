@@ -1,8 +1,4 @@
-//
-//  VerificationViewController.swift
-//  Happid
-//
- //
+ 
 
 import UIKit
 
@@ -31,8 +27,7 @@ class VerificationViewController: UIViewController ,UITextFieldDelegate{
         super.viewDidLoad()
         setupTextFields()
         phoneNoLabel.text =  "+91 \(phoneNumberString)"
-        //phoneNumberString
-     }
+      }
     
     func otpVerification (){
         

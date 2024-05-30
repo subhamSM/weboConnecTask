@@ -1,8 +1,4 @@
-//
-//  LoginViewController.swift
-//  Happid
-//
- //
+ 
 
 import UIKit
 import CountryPickerView
@@ -43,8 +39,7 @@ class LoginViewController: UIViewController ,UITextViewDelegate ,UITextFieldDele
     }
     override func viewWillAppear(_ animated: Bool) {
         blurOtpView.isHidden = true
-//        mobileTextFeild.text = " "
-        mobileTextFeild.attributedPlaceholder = NSAttributedString(string:  "0 0 0 0 0   0 0 0 0 0", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+         mobileTextFeild.attributedPlaceholder = NSAttributedString(string:  "0 0 0 0 0   0 0 0 0 0", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
     }
     //
     
@@ -64,8 +59,7 @@ class LoginViewController: UIViewController ,UITextViewDelegate ,UITextFieldDele
         print("checkINPrint\(countryFlag) \(countryName)")
         countryPickerBtn.setImage(countryFlag, for: .normal)
         countryPickerBtn.setTitle(countryName, for: .normal)
-//      countryPickerBtn.titleLabel?.font = UIFont.systemFont(ofSize: 3)
-//        countryPickerBtn.setTitle("\(countryFlag) \(countryName)", for: .normal)
+ 
        }
     
     
@@ -156,6 +150,7 @@ class LoginViewController: UIViewController ,UITextViewDelegate ,UITextFieldDele
         textView.delegate = self
         textView.textContainerInset = .zero
         textView.textContainer.lineFragmentPadding = 0
+        textView.textAlignment = .center
     }
 
 
@@ -174,12 +169,7 @@ class LoginViewController: UIViewController ,UITextViewDelegate ,UITextFieldDele
     
     
     @IBAction func requestBtnAction(_ sender: UIButton) {
-//        if ((mobileTextFeild.text?.isEmpty) != nil){
-//            showAlert(message: "Please Enter Mobile Number")
-//        }else {
-//
-//           
-//        }
+ 
         if mobileTextFeild.text != ""{
             blurOtpView.isHidden = false
         }else {
@@ -196,8 +186,7 @@ class LoginViewController: UIViewController ,UITextViewDelegate ,UITextFieldDele
         if let fourDigitNumber = getFourDigitNumber(from: mobileNumber) {
             print("Four-digit number: \(fourDigitNumber)")
             
-            // Ensure the fourDigitNumber has exactly four characters
-            if fourDigitNumber.count == 4 {
+             if fourDigitNumber.count == 4 {
                 let firstDigit = fourDigitNumber[fourDigitNumber.startIndex]
                 let secondDigit = fourDigitNumber[fourDigitNumber.index(after: fourDigitNumber.startIndex)]
                 let thirdDigit = fourDigitNumber[fourDigitNumber.index(fourDigitNumber.startIndex, offsetBy: 2)]
@@ -212,8 +201,7 @@ class LoginViewController: UIViewController ,UITextViewDelegate ,UITextFieldDele
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         if let secondVC = storyboard.instantiateViewController(withIdentifier: "VerificationViewController") as? VerificationViewController {
-                            // Push the second view controller onto the navigation stack
-                            secondVC.num1 = self.textFeild1.text!
+                             secondVC.num1 = self.textFeild1.text!
                             secondVC.num2 = self.textFeild2.text!
                             secondVC.num3 = self.textFeild3.text!
                             secondVC.num4 = self.textFeild4.text!
@@ -228,10 +216,6 @@ class LoginViewController: UIViewController ,UITextViewDelegate ,UITextFieldDele
                 
             }
         }
-        
-        
-        
-        //
         
         
     }
